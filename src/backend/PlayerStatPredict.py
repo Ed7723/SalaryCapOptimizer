@@ -11,7 +11,7 @@ from datetime import timedelta
 
 #This program predicts the stats of a given player with their csv file from basketball-reference.com (using linear regression algorithm)
 
-playerData = pandas.read_csv("vanvleet2021.csv")
+playerData = pandas.read_csv("vanvleet2021.csv") #insert player csv file here, make sure path is correct.
 
 playerData = playerData[playerData["MP"].str.contains("Inactive") == False]
 playerData = playerData[playerData["MP"].str.contains("Did Not Play") == False]
@@ -55,5 +55,5 @@ userGuess=input("What do you think the player's point score is?: ")
 print("The machine learning model predicted: " + str(predictions[1]))
 print("The actual point score is: " + y_test[1])
 
-#for i in range(len(predictions)):
-#  print(predictions[i],x_test[i],y_test[i])
+for i in range(len(predictions)):   #uncomment out if you want to see the test data and the predictions for thos
+  print("The predicted output generated is: " + str(predictions[i]) + "The test data used to generate the prediction was: " + str(x_test[i]) + "The actual output was: " + str(y_test[i]))
