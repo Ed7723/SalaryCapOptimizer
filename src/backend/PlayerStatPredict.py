@@ -11,7 +11,7 @@ from datetime import timedelta
 
 #This program predicts the stats of a given player with their csv file from basketball-reference.com (using linear regression algorithm)
 
-playerData = pandas.read_csv("src/backend/vanvleet2021.csv") #insert player csv file here, make sure path is correct. 
+playerData = pandas.read_csv("src/backend/siakam2021.csv") #insert player csv file here, make sure path is correct. 
 
 playerData = playerData[playerData["MP"].str.contains("Inactive") == False]
 playerData = playerData[playerData["MP"].str.contains("Did Not Play") == False]
@@ -39,18 +39,17 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y
 linear = linear_model.LinearRegression()  #choosing linear regression as all stats are correalated 
 
 linear.fit(x_train,y_train)  #fit model with the training data
-accu = linear.score(x_test,y_test)  # used to print accuracy score
-print("accuracy is: " + str(accu))
+
 
 
 predictions = linear.predict(x_test)  #predict using x_test, which is randomized by sklearn
-print("\n Given that in a certain game, player achieves the following stats: ")
+print("\nGiven that in a certain game, player achieves the following stats: ")
 print("MP: " + str(x_test[1][0]) + " FGA: "+ str(x_test[1][1]) +  " TRB: " + str(x_test[1][2]))
 print("AST: " + str(x_test[1][3]) + " STL: " + str(x_test[1][4]) + " BLK:" + str(x_test[1][5]) + " TOV: " + str(x_test[1][6]))
 print("+/-: " + str(x_test[1][7]) )
 userGuess=input("What do you think the player's point score is?: ")
 print("The machine learning model predicted: " + str(predictions[1]))
-print("The actual point score is: " + y_test[1])
+print("The actual point score is: " + y_test[1]) 
 
 #for i in range(len(predictions)):   #uncomment out if you want to see the test data and the predictions for thos
 #  print("The predicted output generated is: " + str(predictions[i]) + "The test data used to generate the prediction was: " + str(x_test[i]) + "The actual output was: " + str(y_test[i]))
