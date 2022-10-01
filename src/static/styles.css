@@ -1,20 +1,57 @@
 :root {
     --orange: #e8880b;
     --orangeTwo: #f9b965;
+    --orangeThree: #e77604;
+    --orangeFour: #ef9666;
 }
 
 table{
-    border-radius: 7px;
+    border-radius: 10px;
 }
 .navbar{
-    background-color: var(--orange);
+    background: -webkit-linear-gradient(to right, var(--orangeThree), var(--orangeTwo));
+    background: linear-gradient(to right, var(--orangeThree), var(--orangeTwo));
 }
 .section-content{
     background-color: var(--orangeTwo);
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content:space-between;
+    border-radius: 10px;
 }
 .nav-link{
     color:black;
 }
 .nav-link:hover{
     color:white;
+}
+.footer-basic {
+    padding:20px 0;
+    color:var(--orange);
+    bottom:0;
+    border: 1px var(--orangeTwo);
+}
+
+.footer-basic .social {
+    text-align:center;
+}
+
+.footer-basic img {
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    border-radius:50%;
+}
+
+.footer-basic img:hover{
+    opacity: 0.8;
+}
+  
+.footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
 }
