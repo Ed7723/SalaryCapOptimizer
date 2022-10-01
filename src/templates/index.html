@@ -1,1 +1,14 @@
 {% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <form class="row g-4" method = "post">
+      <div class="col-auto">
+        <label for="queryString" class="visually-hidden">Search player name</label>
+        <input type="text" class="form-control" id="queryString" placeholder="Search player name">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Search</button>
+      </div>
+    </form>
+{% endblock %}
