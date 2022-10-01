@@ -11,6 +11,7 @@ def load_players():
     players = []
     with open(filename, 'r', encoding='utf8') as csvfile:
         csvreader = csv.reader(csvfile)
+        fields = next(csvreader)
         for row in csvreader:
             players.append(Player(row[0], row[1], row[2]))
     return players
