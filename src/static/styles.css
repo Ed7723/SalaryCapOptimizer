@@ -29,7 +29,6 @@ table{
     padding:20px 0;
     color:var(--orange);
     bottom:0;
-    border: 1px var(--orangeTwo);
 }
 
 .footer-basic .social {
