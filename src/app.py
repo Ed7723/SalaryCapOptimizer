@@ -1,5 +1,6 @@
 from flask import Flask,  url_for, render_template, request 
 from players import load_players, Player
+from PlayerStatPredict import Predict
 import json
 
 app = Flask(__name__)
@@ -18,6 +19,12 @@ def create_team():
 def get_players():
     players = load_players()
     return [x.__dict__ for x in players]
+
+@app.route("/players/<name>/prediction", methods=["Get"])
+def get_player_prediction(name):
+    if(name == "PascalSiakim"):
+        stats = Predict("backend/siakam2021.csv")
+        return stats.__dict__
 
 @app.route("/table")
 def table():
