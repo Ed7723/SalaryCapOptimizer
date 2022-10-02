@@ -25,27 +25,32 @@ def get_players():
 @app.route("/pascalsiakam", methods=["Get"])
 def get_player_prediction_pascal():
     stats = Predict("backend/siakam2021.csv")
-    return render_template('search.html', stats = stats.__dict__)
+    name = 'Pascal Siakam'
+    return render_template('search.html', stats = stats.__dict__,name = name)
 
-@app.route("/pascalsiakam", methods=["Get"])
+@app.route("/fred", methods=["Get"])
 def get_player_prediction_fred():
     stats = Predict("backend/vanvleet2021.csv")
-    return render_template('search.html', stats = stats.__dict__)
+    name = 'Fred Vanvleet'
+    return render_template('search.html', stats = stats.__dict__,name = name)
 
-@app.route("/pascalsiakam", methods=["Get"])
+@app.route("/scottie", methods=["Get"])
 def get_player_prediction_scottie():
     stats = Predict("backend/barnes2021.csv")
-    return render_template('search.html', stats = stats.__dict__)
+    name = 'Scottie Barnes'
+    return render_template('search.html', stats = stats.__dict__,name = name)
 
 @app.route("/garytrentjr", methods=["Get"])
 def get_player_prediction_gary():
     stats = Predict("backend/trentjr2021.csv")
-    return render_template('search.html', stats = stats.__dict__)
+    name = 'Gary Trent Jr'
+    return render_template('search.html', stats = stats.__dict__,name = name)
 
 @app.route("/oganunoby", methods=["Get"])
 def get_player_prediction_og():
-    stats = Predict("backend/anunoby2021.csv")
-    return render_template('search.html', stats = stats.__dict__)
+    stats = Predict("backend/annunoby2021.csv")
+    name = 'OG Anunoby'
+    return render_template('search.html', stats = stats.__dict__,name = name)
 
     
 @app.route("/table")
