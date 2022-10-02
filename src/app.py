@@ -13,7 +13,7 @@ def index():
 def create_team():
     player_list = json.loads(request.data)
     player_list = [Player(x["name"], x["salary"], x["team"]) for x in player_list]
-    return ""
+    return render_template('table.html', player_list)
 
 @app.route("/players", methods=["Get"])
 def get_players():
@@ -25,7 +25,7 @@ def get_player_prediction(name):
     if(name == "PascalSiakim"):
         stats = Predict("backend/siakam2021.csv")
         return stats.__dict__
-
+    
 @app.route("/table")
 def table():
     return render_template('table.html')
