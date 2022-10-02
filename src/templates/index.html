@@ -2,13 +2,22 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <form class="row g-4" method = "post">
-      <div class="col-auto">
-        <label for="queryString" class="visually-hidden">Search player name</label>
-        <input type="text" class="form-control" id="queryString" placeholder="Search player name">
-      </div>
-      <div class="col-auto">
-        <button type="submit" class="btn btn-dark">Search</button>
-      </div>
-    </form>
+<div class="container p-2">
+  <div class="row">
+  <div class="col-3"></div>
+  <div class="col container-pic"><img src="{{url_for('static', filename='frontpic.jpg')}}" class="img-fluid" alt="firstPic"></div>
+  <div class="col-auto"></div>
+  </div>
+</div>
+<form class="row" >
+  <div class="col-1">
+  </div>
+  <div class="col-9">
+    <label for="queryString" class="visually-hidden">Search player name</label>
+    <input type="text" class="form-control" id="queryString" placeholder="Search player name" required>
+  </div>
+  <div class="col-1">
+    <button type="submit" class="btn btn-dark">Search</button>
+  </div>
+</form>
 {% endblock %}

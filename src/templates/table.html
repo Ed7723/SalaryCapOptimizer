@@ -2,21 +2,20 @@
 {% block title %}Table{% endblock %}
 
 {% block content %}
-  <table id="data" class="table table-striped">
+  <table id="data" class="table table-hover">
     <thead>
       <tr>
         <th>Name</th>
-        <th>Age</th>
-        <th>Address</th>
+        <th>Team</th>
       </tr>
     </thead>
     <tbody>
-      {% for user in users %}
-        <tr>
-          <td>{{ user.name }}</td>
-          <td>{{ user.age }}</td>
-          <td>{{ user.address }}</td>
-        </tr>
+      {% for player in currentPlayers %}
+      <tr>
+        {% for var in player %}
+          <td>{{var}}</a></td>
+        {% endfor %}
+      </tr>
       {% endfor %}
     </tbody>
   </table>
