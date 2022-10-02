@@ -55,9 +55,19 @@ table{
     margin-bottom:0;
 }
 
-.container-pic img{
+.container-pic-one{
+    display:flex;
+    justify-content: center;
+}
+
+.container-pic-one img{
     height: 517px;
     width: 619px;
     border-radius: 10px;
     object-fit: cover;
+}
+
+.col-dropdown{ 
+    display: flex;
+    justify-content: center;
 }

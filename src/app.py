@@ -22,21 +22,31 @@ def get_players():
     players = load_players()
     return [x.__dict__ for x in players]
 
-@app.route("/index", methods=["Get"])
-def get_player_prediction(name):
-    if(name == "pascal siakim"):
-        stats = Predict("backend/siakam2021.csv")
-    elif(name == "og anunoby"):
-        stats = Predict("backend/anunoby2021.csv")
-    elif(name == "gary trent jr"):
-        stats = Predict("backend/trentjr2021.csv")
-    elif(name == "fred vanvleet"):
-        stats = Predict("backend/vanvleet2021.csv")    
-    elif(name == "scottie barnes"):
-        stats = Predict("backend/barnes2021.csv")
-    else:
-        return redirect(url_for('notFound.html'))
+@app.route("/pascalsiakam", methods=["Get"])
+def get_player_prediction_pascal():
+    stats = Predict("backend/siakam2021.csv")
     return render_template('search.html', stats = stats.__dict__)
+
+@app.route("/pascalsiakam", methods=["Get"])
+def get_player_prediction_fred():
+    stats = Predict("backend/vanvleet2021.csv")
+    return render_template('search.html', stats = stats.__dict__)
+
+@app.route("/pascalsiakam", methods=["Get"])
+def get_player_prediction_scottie():
+    stats = Predict("backend/barnes2021.csv")
+    return render_template('search.html', stats = stats.__dict__)
+
+@app.route("/garytrentjr", methods=["Get"])
+def get_player_prediction_gary():
+    stats = Predict("backend/trentjr2021.csv")
+    return render_template('search.html', stats = stats.__dict__)
+
+@app.route("/oganunoby", methods=["Get"])
+def get_player_prediction_og():
+    stats = Predict("backend/anunoby2021.csv")
+    return render_template('search.html', stats = stats.__dict__)
+
     
 @app.route("/table")
 def table():

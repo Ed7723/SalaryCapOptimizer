@@ -2,22 +2,23 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="container p-2">
-  <div class="row">
-  <div class="col-3"></div>
-  <div class="col container-pic"><img src="{{url_for('static', filename='frontpic.jpg')}}" class="img-fluid" alt="firstPic"></div>
-  <div class="col-auto"></div>
+<div class="container-pic-one p-2">
+  <div class="container-pic-two">
+    <img src="{{url_for('static', filename='frontpic.jpg')}}" class="img-fluid" alt="firstPic">
   </div>
 </div>
-<form class="row" >
-  <div class="col-1">
-  </div>
-  <div class="col-9">
-    <label for="queryString" class="visually-hidden">Search player name</label>
-    <input type="text" class="form-control" id="queryString" placeholder="Search player name" required>
-  </div>
-  <div class="col-1">
-    <button type="submit" class="btn btn-dark">Search</button>
-  </div>
-</form>
+<div class="col-dropdown">
+  <div class="dropdown">
+     <a class="btn btn-warning dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Choose Player
+     </a>
+     <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="{{ url_for('get_player_prediction_pascal') }}">Pascal Siakam</a></li>
+        <li><a class="dropdown-item" href="{{ url_for('get_player_prediction_fred') }}">Fred Vanvleet</a></li>
+        <li><a class="dropdown-item" href="{{ url_for('get_player_prediction_scottie') }}">Scottie Barnes</a></li>
+        <li><a class="dropdown-item" href="{{ url_for('get_player_prediction_gary') }}">Gary Trent Jr</a></li>
+        <li><a class="dropdown-item" href="{{ url_for('get_player_prediction_og') }}">OG Anunoby</a></li>
+     </ul>
+   </div>
+</div>
 {% endblock %}
