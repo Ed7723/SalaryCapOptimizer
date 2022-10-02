@@ -14,7 +14,7 @@ table{
 }
 .section-content{
     background-color: var(--orangeTwo);
-    min-height: 100vh;
+    min-height: 75vh;
     flex-direction: column;
     justify-content:space-between;
     border-radius: 10px;
@@ -53,4 +53,11 @@ table{
     font-size:13px;
     color:#aaa;
     margin-bottom:0;
+}
+
+.container-pic img{
+    height: 517px;
+    width: 619px;
+    border-radius: 10px;
+    object-fit: cover;
 }
